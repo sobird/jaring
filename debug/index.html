@@ -27,7 +27,12 @@
 </div>
 
 <script type="text/javascript">
-
+var tester = Jaring.dom.get('tester');
+var title = Jaring.dom.get('title');
+(function(){
+	var drag = new Jaring.Draggable(tester, title);
+	drag.enable();
+})();
 </script>
 </body>
 </html>

@@ -49,7 +49,16 @@
 	//----------------------------------------------------------------
 	
 	require('jaring.js');
+	require('core/constant.js');
+	require('core/util.js');
+	require('core/browser.js');
 	require('core/event.js');
+	require('core/Observable.js');
+	require('core/MVCObject.js');
+
+	require('core/dom.js');
+
+	require('widget/Draggable.js');
 
 	//Core 核心文件
 	
