@@ -56,6 +56,10 @@
 	require('core/Observable.js');
 	require('core/MVCObject.js');
 
+	require('type/Event.js');
+	require('type/Offset.js');
+	require('type/Point.js');
+
 	require('core/dom.js');
 
 	require('widget/Draggable.js');

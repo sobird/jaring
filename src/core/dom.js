@@ -88,8 +88,7 @@
 			var el = name ? mix : this,
 				cn = name || mix;
 
-			return (el.className.length > 0) &&
-					new RegExp('(^|\\s)' + cn + '(\\s|$)').test(el.className);
+			return (el.className.length > 0) && new RegExp('(^|\\s)' + cn + '(\\s|$)').test(el.className);
 		},
 
 		addClass: function(mix, name){
@@ -336,14 +335,14 @@
 		 * 
 		 * @author junlong.yang
 		 * @since 1.0.0
-		 * @return {Size} size [Jaring.maps.Size]
+		 * @return {Size} size [Jaring.type.Size]
 		 */
 		size: function(){
 			var args = Array.prototype.slice.call(arguments, 0),
 				last = args[args.length - 1];
 
-			if (last instanceof Jaring.maps.Size){
-				var el = (args[0] instanceof Jaring.maps.Size) ? this : args[0];
+			if (last instanceof Jaring.type.Size){
+				var el = (args[0] instanceof Jaring.type.Size) ? this : args[0];
 				this.width(el, last.width);
 				this.height(el, last.height);
 				el._jaring_size_ = last;
@@ -354,7 +353,7 @@
 					return el._jaring_size_;
 				}
 
-				return new Jaring.maps.Size(this.width(el)||0, this.height(el)||0);
+				return new Jaring.type.Size(this.width(el)||0, this.height(el)||0);
 			}
 		},
 
@@ -496,11 +495,11 @@
 					el = el.parentNode;
 				} while (el);
 
-				return new Jaring.maps.Offset(left, top);
+				return new Jaring.type.Offset(left, top);
 
-			} else if(last instanceof Jaring.maps.Offset) {
+			} else if(last instanceof Jaring.type.Offset) {
 
-				var el = (args[0] instanceof Jaring.maps.Offset) ? this : args[0];
+				var el = (args[0] instanceof Jaring.type.Offset) ? this : args[0];
 				el.style.left = last.left + 'px';
 				el.style.top  = last.top  + 'px';
 				el._jaring_offset_ = last;
@@ -513,7 +512,7 @@
 					return el._jaring_offset_;
 				}
 
-				return new Jaring.maps.Offset(el.style.left||0, el.style.top||0);
+				return new Jaring.type.Offset(el.style.left||0, el.style.top||0);
 			}
 		},
 
@@ -521,7 +520,7 @@
 		 * 获取浏览器滚动条 偏移量
 		 * 
 		 * @author junlong.yang
-		 * @return {Offset} [Jaring.maps.Offsets]
+		 * @return {Offset} [Jaring.type.Offsets]
 		 */
 		scroll: function() {
 			var html = document.documentElement,
@@ -536,7 +535,7 @@
 				scrollLeft = body.scrollLeft;
 				scrollTop  = body.scrollTop;
 			}
-			return new Jaring.maps.Offset(scrollLeft, scrollTop);
+			return new Jaring.type.Offset(scrollLeft, scrollTop);
 		},
 
 		/**

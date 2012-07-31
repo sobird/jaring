@@ -45,7 +45,7 @@
 	 * 鼠标按下 事件处理程序
 	 * 
 	 * @access private
-	 * @param  {Jaring.maps.Event} event [description]
+	 * @param  {Jaring.type.Event} event [description]
 	 * @return {None}   [description]
 	 */
 	var onMouseDown = function(event) {
@@ -59,7 +59,7 @@
 		}
 
 		this._startOffset = this._lastOffset = this.dragElement.offset();
-		this._startPoint = new Jaring.maps.Point(event.x, event.y);
+		this._startPoint = new Jaring.type.Point(event.pageX, event.pageY);
 
 
 		//给document添加 mousemove 和 mouseup 事件处理程序
@@ -77,12 +77,12 @@
 			this.moved = true;
 		}
 		this.moving = true;
-
-		var deltaOffset = new Jaring.maps.Point(event.x, event.y).subtract(this._startPoint).toOffset();
+console.log(this._startPoint);
+		var deltaOffset = new Jaring.type.Point(event.pageX, event.pageY).subtract(this._startPoint).toOffset();
 
 		this._lastOffset = this._startOffset.plus(deltaOffset);
 
-		//console.log(this._newPos);
+		console.log(this._lastOffset);
 		this.dragElement.offset(this._lastOffset);
 	};
 
