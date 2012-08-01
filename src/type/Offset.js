@@ -35,6 +35,6 @@
 			this.left += offset.left;
 			this.top += offset.top;
 			return this;
-		},
+		}
 	});
 })();
