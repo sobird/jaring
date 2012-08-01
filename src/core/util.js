@@ -394,7 +394,7 @@
 			}
 
 			return o;
-		},
+		}
 	}
 
 	//Jaring.util.createClass方法别名
