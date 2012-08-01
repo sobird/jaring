@@ -77,12 +77,11 @@
 			this.moved = true;
 		}
 		this.moving = true;
-console.log(this._startPoint);
+
 		var deltaOffset = new Jaring.type.Point(event.pageX, event.pageY).subtract(this._startPoint).toOffset();
 
 		this._lastOffset = this._startOffset.plus(deltaOffset);
 
-		console.log(this._lastOffset);
 		this.dragElement.offset(this._lastOffset);
 	};
 
